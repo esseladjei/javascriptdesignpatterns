@@ -1,0 +1,14 @@
+{
+  "name": "designpatterns",
+  "version": "1.0.0",
+  "description": "learn some common javascript design patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "essel",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.4.0"
+  }
+}
