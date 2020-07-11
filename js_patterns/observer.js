@@ -12,28 +12,27 @@ class Observer {
       }
     });
   }
-  trigger() {
+  trigger(name) {
     this.Observer.forEach((fn) => {
-      fn.call();
+      fn(name);
     });
   }
 }
 const observer = new Observer();
 let observerArray = [
-  function obs1() {
-    console.log("I am observer 1");
+  function obs1(name) {
+    console.log(`${name} is calling from observer 1`);
   },
-  function obs2() {
-    console.log("I am observer 2");
+  function obs2(name) {
+       console.log(`${name} is calling from observer 2`);
   },
-  function obs3() {
-    console.log("I am observer 3");
+  function obs3(name) {
+        console.log(`${name} is calling from observer 3`);
   },
 ];
 for (let index = 0; index < observerArray.length; index++) {
-  const element = observerArray[index];
-  observer.subscribe(element);
+  const selectedFunction = observerArray[index];
+  observer.subscribe(selectedFunction);
 }
 observer.unsubscribe(observerArray[1]);
-observer.unsubscribe(observerArray[2]);
-observer.trigger();
+observer.trigger("Essel");
